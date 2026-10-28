@@ -1,26 +1,160 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-wine-50: #fbf3f4;
+  --color-wine-100: #f4e1e3;
+  --color-wine-200: #e6bcc1;
+  --color-wine-500: #9a3442;
+  --color-wine-600: #7a1f2b;
+  --color-wine-700: #631824;
+  --color-wine-800: #4b111b;
+
+  --color-coffee-50: #f7f2ef;
+  --color-coffee-100: #e9dfd9;
+  --color-coffee-200: #d3c2b8;
+  --color-coffee-400: #8d6e63;
+  --color-coffee-500: #6d4c41;
+  --color-coffee-600: #5d4037;
+  --color-coffee-700: #4e342e;
+  --color-coffee-800: #3e2723;
+  --color-coffee-900: #2a1a17;
+
+  --color-caramel-100: #f3e4d6;
+  --color-caramel-200: #e8cbb0;
+  --color-caramel-400: #c68b59;
+  --color-caramel-600: #8a5a2b;
+  --color-caramel-700: #6f4721;
+
+  --color-cream-50: #fdfbf8;
+  --color-cream-100: #fbf8f4;
+  --color-cream-200: #f6efe6;
+  --color-cream-300: #efe4d6;
+
+  --color-ok-50: #edf5f0;
+  --color-ok-600: #2f6b4f;
+  --color-ok-700: #245640;
+  --color-warn-50: #fbf3e6;
+  --color-warn-600: #845410;
+  --color-bad-50: #f9eeec;
+  --color-bad-600: #a23b2e;
+  --color-bad-700: #85301f;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-lora), ui-serif, Georgia, serif;
+
+  --shadow-soft: 0 1px 2px rgb(62 39 35 / 0.04), 0 8px 24px -12px rgb(62 39 35 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(62 39 35 / 0.05), 0 18px 40px -18px rgb(62 39 35 / 0.32);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply bg-cream-100 text-coffee-800 font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-coffee-800;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-wine-600);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: var(--color-caramel-200);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility card {
+  @apply rounded-2xl border border-coffee-100 bg-cream-50 shadow-soft;
+}
+
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.18em] text-wine-600;
+}
+
+/* Slider */
+input[type="range"].slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 28px;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"].slider::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--color-wine-600) 0%,
+    var(--color-wine-600) var(--fill, 50%),
+    var(--color-coffee-100) var(--fill, 50%),
+    var(--color-coffee-100) 100%
+  );
+}
+input[type="range"].slider::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-coffee-100);
+}
+input[type="range"].slider::-moz-range-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-wine-600);
+}
+input[type="range"].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -7px;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--color-cream-50);
+  border: 3px solid var(--color-wine-600);
+  box-shadow: 0 2px 6px rgb(62 39 35 / 0.25);
+  transition: transform 0.15s ease;
+}
+input[type="range"].slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--color-cream-50);
+  border: 3px solid var(--color-wine-600);
+}
+input[type="range"].slider:active::-webkit-slider-thumb {
+  transform: scale(1.15);
+}
+input[type="range"].slider:focus-visible {
+  outline: none;
+}
+input[type="range"].slider:focus-visible::-webkit-slider-thumb {
+  outline: 3px solid var(--color-caramel-400);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# geometria bruta (baixada por npm run build:map)
+scripts/brazil-states.geojson
