@@ -7,7 +7,7 @@ export const SITE = {
   role: "Engenheiro de software e analista de performance",
   program: "PIB The New College · Processo seletivo, 2ª etapa",
   linkedin: "https://www.linkedin.com/in/SEU-PERFIL",
-  github: "https://github.com/SEU-USUARIO",
+  github: "https://github.com/Henrique1817",
   youtube: "https://www.youtube.com/watch?v=SEU-VIDEO",
 } as const;
 
