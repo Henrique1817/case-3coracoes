@@ -98,8 +98,10 @@ Os testes (`npm test`) falham se essa reprodução quebrar.
 3. Rode `npm test` para confirmar que o Atual continua reproduzindo o case.
 4. A página `/metodologia` se atualiza sozinha: as tabelas e fórmulas são lidas do próprio modelo.
 
-Para trocar nome, links do LinkedIn/GitHub e o vídeo do YouTube, edite `src/data/site.ts`
-(os valores atuais são placeholders).
+Para trocar nome, links do LinkedIn/GitHub e o vídeo do YouTube, edite `src/data/site.ts`.
+
+- Site publicado: https://case-3coracoes.vercel.app
+- Vídeo de apresentação: https://youtu.be/DEq7_8ZIPuY
 
 ## Principais fórmulas
 

@@ -1,4 +1,4 @@
-/** Links e textos do autor — substitua os placeholders antes de publicar. */
+/** Links e textos do autor. */
 export const SITE = {
   title: "Case 3corações · por Henrique Miguel",
   description:
@@ -6,9 +6,9 @@ export const SITE = {
   author: "Henrique Miguel",
   role: "Engenheiro de software e analista de performance",
   program: "PIB The New College · Processo seletivo, 2ª etapa",
-  linkedin: "https://www.linkedin.com/in/SEU-PERFIL",
+  linkedin: "https://www.linkedin.com/in/henrique-miguel-a94108322/",
   github: "https://github.com/Henrique1817",
-  youtube: "https://www.youtube.com/watch?v=SEU-VIDEO",
+  youtube: "https://youtu.be/DEq7_8ZIPuY",
 } as const;
 
 export const NAV = [

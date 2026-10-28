@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { CASE_FACTS } from "@/data/model";
+import { SITE } from "@/data/site";
 import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { fmtNumber } from "@/lib/format";
 
@@ -109,6 +110,14 @@ export function Hero() {
             className="rounded-full px-5 py-3 text-base font-medium text-coffee-700 underline-offset-4 hover:underline"
           >
             Entender o diagnóstico
+          </a>
+          <a
+            href={SITE.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-coffee-200 px-5 py-2.5 text-base font-medium text-coffee-700 transition hover:border-wine-600 hover:text-wine-600"
+          >
+            <span aria-hidden>▶</span> Assistir ao vídeo
           </a>
           <p className="w-full text-xs text-coffee-500 sm:w-auto">
             Números fictícios, conforme o enunciado do case.
